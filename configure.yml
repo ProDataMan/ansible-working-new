@@ -7,4 +7,4 @@
     - name: Create web.config file
       template:
         src: templates/web.config.j2
-        dest: /var/www/html/web.config
+        dest: c:/inetpub/wwwroot/web.config
