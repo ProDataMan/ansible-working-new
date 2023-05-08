@@ -3,6 +3,8 @@
   vars:
     ip_address: 10.0.0.1
     database_name: mydatabase
+    db_user: sqluser
+    db_password: Pa$$w0rd
   tasks:
     - name: Create web.config file
       template:
