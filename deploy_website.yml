@@ -5,6 +5,7 @@
   become_user: Administrator
   vars_files:
     - vault/secrets.yml
+    - vault/win_connect.yml
   vars:
     ansible_connection: winrm
     ansible_winrm_server_cert_validation: ignore
