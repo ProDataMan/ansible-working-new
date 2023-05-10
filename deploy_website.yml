@@ -24,7 +24,3 @@
         src: templates/web.config.j2
         dest: C:\inetpub\wwwroot\web.config
       become: true
-    - name: Ensure IIS is started
-      win_service:
-        name: "{{ service_name }}"
-        state: started
