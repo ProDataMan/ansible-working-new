@@ -3,9 +3,6 @@
   become: yes
   become_method: runas
   become_user: Administrator
-  vars_files:
-  - vault/credentials.yml
-  - vault/win_connect.yml
   tasks:
     - name: Create Remote Admins group
       win_group:
