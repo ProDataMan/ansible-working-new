@@ -1,7 +1,9 @@
 ---
 - name: Install IIS on Windows
   hosts: webservers
-  become: true
+  become: yes
+  become_method: runas
+  become_user: Administrator
   tasks:
   - name: Install IIS Web Server Role
     win_feature:
@@ -12,3 +14,7 @@
       name: W3SVC
       start_mode: auto
       state: started
+  - name: Create index.html file
+    win_copy:
+      content: "<html><head><title>{{ index_title }}</title></head><body><h1>{{ index_title }}</h1><p>{{ index_body }}</p></body></html>"
+      dest: "C:\\inetpub\\wwwroot\\index.html"
