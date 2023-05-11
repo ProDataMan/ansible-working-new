@@ -1,9 +1,14 @@
-- name: Install IIS on Windows Server 2019
+---
+- name: Install IIS on Windows
   hosts: webservers
-  gather_facts: no
+  become: true
   tasks:
-    - name: Install IIS
-      win_feature:
-        name: Web-Server
-        state: present
-
+  - name: Install IIS Web Server Role
+    win_feature:
+      name: Web-Server
+      state: present
+  - name: Start World Wide Web Publishing Service
+    win_service:
+      name: W3SVC
+      start_mode: auto
+      state: started
