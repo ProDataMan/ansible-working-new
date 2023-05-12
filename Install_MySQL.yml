@@ -1,0 +1,9 @@
+---
+- name: Install MySQL
+  hosts: 
+  become: true
+  tasks:
+    - name: Install MySQL
+      apt:
+        name: mysql-server
+        state: present
