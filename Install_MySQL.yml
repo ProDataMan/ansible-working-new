@@ -1,6 +1,6 @@
 ---
 - name: Install MySQL
-  hosts: 
+  hosts: all
   become: true
   tasks:
     - name: Install MySQL
