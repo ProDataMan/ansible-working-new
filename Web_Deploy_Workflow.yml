@@ -1,5 +1,5 @@
 - name: Update Web.Config for DB
-  hosts: all
+  hosts: webservers
   become: yes 
   become_method: runas
   become_user: Administrator

@@ -1,6 +1,6 @@
 ---
 - name: Install MySQL
-  hosts: all
+  hosts: ubuntu_server
   become: true
   tasks:
     - name: Install MySQL
